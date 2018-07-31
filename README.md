@@ -3,7 +3,7 @@ AWS Lambda function to get Cloudflare Enterprise Log Share logs and send them to
 
 ## Pre-requisites
 1. Get the ID of the Cloudflare zone (available in the Cloudflare Control Panel -> Overview, Domain Summary)
-2. Create a Cloudflare user with log access (feature Enterprise Log Share is available in Enterprise accounts)
+2. Create a Cloudflare user with log access (the feature Enterprise Log Share is available in Enterprise accounts)
 3. Configure the Splunk HEC
 4. Determine the desired interval between the logs collection (default -> 30 minutes)
 

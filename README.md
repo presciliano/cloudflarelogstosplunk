@@ -24,5 +24,8 @@ AWS Lambda function to get Cloudflare Enterprise Log Share logs and send them to
 ## Authors
 - Presciliano Neto
 
+## To do
+- Treat request errors (e.g. API trothling limits) and wrong values in the environment variables
+
 ## License
-This project is licensed under the GNU 3 License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details

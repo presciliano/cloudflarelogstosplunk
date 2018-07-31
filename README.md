@@ -8,7 +8,7 @@ AWS Lambda function to get Cloudflare Enterprise Log Share logs and send them to
 4. Determine the desired interval between the logs collection (default -> 30 minutes)
 
 ## Setup
-1. Create a new AWS Lambda Function: Author from scratch, Runtime Python 3.6
+1. Create a new AWS Lambda Function: Author from scratch, Runtime Python 3.6, create a new role or use the `lambda_basic_execution`
 2. Edit code inline and copy the contents of the file [lambda_function.py](lambda_function.py) from this repository
 3. Add the following Environment variables and their values
   - CLOUDFLARE_ZONE_ID

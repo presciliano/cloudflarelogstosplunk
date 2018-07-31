@@ -21,8 +21,8 @@ AWS Lambda function to get Cloudflare Enterprise Log Share logs and send them to
 4. Add a Cloudwatch Events trigger with a schedule expression accordingly to your desired collection frequency, e.g. `rate(30 minutes`
 5. Enable the trigger
 
-##Authors
+## Authors
 - Presciliano Neto
 
-##License
+## License
 This project is licensed under the GNU 3 License - see the [LICENSE.md](LICENSE.md) file for details

@@ -9,7 +9,7 @@ AWS Lambda function to get Cloudflare Enterprise Log Share logs and send them to
 
 ## Setup
 1. Create a new AWS Lambda Function: Author from scratch, Runtime Python 3.6
-2. Edit code inline and copy the contents of the file [lambda_function.py] from this repository
+2. Edit code inline and copy the contents of the file [lambda_function.py](lambda_function.py) from this repository
 3. Add the following Environment variables and their values
   - CLOUDFLARE_ZONE_ID
   - CLOUDFLARE_EMAIL

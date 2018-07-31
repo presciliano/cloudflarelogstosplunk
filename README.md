@@ -16,8 +16,8 @@ AWS Lambda function to get Cloudflare Enterprise Log Share logs and send them to
   - CLOUDFLARE_AUTH_KEY 
   - SPLUNK_TOKEN
   - SPLUNK_HOST
-  - TIME_OFFSET
-  - TIME_INTERVAL
+  - TIME_OFFSET: defaults to 10
+  - TIME_INTERVAL: defaults to 30
 4. Add a Cloudwatch Events trigger with a schedule expression accordingly to your desired collection frequency, e.g. `rate(30 minutes`
 5. Enable the trigger
 

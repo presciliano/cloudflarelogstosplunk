@@ -1,7 +1,7 @@
 # CloudflareLogsToSplunk
 AWS Lambda function to get Cloudflare Enterprise Log Share logs and send them to Splunk HTTP Event Collector 
 
-## Pre-requisites
+## Prerequisites
 1. Get the ID of the Cloudflare zone (available in the Cloudflare Control Panel -> Overview, Domain Summary)
 2. Create a Cloudflare user with log access (the feature Enterprise Log Share is available in Enterprise accounts)
 3. Configure the Splunk HEC and set the sourcetype to `cflogshare`

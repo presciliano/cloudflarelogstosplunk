@@ -30,7 +30,7 @@ START RequestId: 3307ee39-9722-11e8-b1e0-c140a53bb843 Version: $LATEST
 Searching for logs between 2018-08-03T12:56:17.646085Z and 2018-08-03T13:26:17.646085Z
 Sending 60 events
 Splunk HEC Response: {"text": "Success", "code": 0}
-END RequestId: 3307ee39-9722-11e8-b1e0-c140a53bb348
+END RequestId: 3307ee39-9722-11e8-b1e0-c140a53bb843
 ```
 
 ## Authors

@@ -6,11 +6,10 @@ AWS Lambda function to get Cloudflare Enterprise Log Share logs and send them to
 2. Create a Cloudflare user with log access (the feature Enterprise Log Share is available in Enterprise accounts)
 3. Configure the Splunk HEC and set the sourcetype to `cflogshare`
 4. Determine the desired interval between the logs collection (default -> 30 minutes)
-5. Decide the list of fields you want to have in Splunk. Cloudflare will provide a list of default fields, but you can specify the entire list, e.g. 
+5. Decide the list of fields you want to have in Splunk. Cloudflare will provide a list of default fields, but you can specify the entire list (please refer to the [documentation](https://support.cloudflare.com/hc/en-us/articles/216672448-Enterprise-Log-Share-Logpull-REST-API)), e.g. 
 ```
 CacheCacheStatus,CacheResponseBytes,CacheResponseStatus,CacheTieredFill,ClientASN,ClientCountry,ClientDeviceType,ClientIP,ClientIPClass,ClientRequestBytes,ClientRequestHost,ClientRequestMethod,ClientRequestProtocol,ClientRequestReferer,ClientRequestURI,ClientRequestUserAgent,ClientSSLCipher,ClientSSLProtocol,ClientSrcPort,EdgeColoID,EdgeEndTimestamp,EdgePathingOp,EdgePathingSrc,EdgePathingStatus,EdgeRateLimitAction,EdgeRateLimitID,EdgeRequestHost,EdgeResponseBytes,EdgeResponseCompressionRatio,EdgeResponseContentType,EdgeResponseStatus,EdgeServerIP,EdgeStartTimestamp,OriginIP,OriginResponseBytes,OriginResponseHTTPExpires,OriginResponseHTTPLastModified,OriginResponseStatus,OriginResponseTime,OriginSSLProtocol,ParentRayID,RayID,SecurityLevel,WAFAction,WAFFlags,WAFMatchedVar,WAFProfile,WAFRuleID,WAFRuleMessage,WorkerCPUTime,WorkerStatus,WorkerSubrequest,WorkerSubrequestCount,ZoneID
 ``` 
-(please refer to the [documentation](https://support.cloudflare.com/hc/en-us/articles/216672448-Enterprise-Log-Share-Logpull-REST-API))
 
 ## Setup
 1. Create a new AWS Lambda Function: Author from scratch, Runtime Python 3.6, create a new role or use the `lambda_basic_execution`

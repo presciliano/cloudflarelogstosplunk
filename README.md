@@ -26,11 +26,13 @@ AWS Lambda function to get Cloudflare Enterprise Log Share logs and send them to
 ## Logs
 A sucessfull Lambda run will look like the following in the Cloudwatch Logs:
 ```
-START RequestId: 3307ee39-9722-11e8-b1e0-c140a53bb843 Version: $LATEST
-Searching for logs between 2018-08-03T12:56:17.646085Z and 2018-08-03T13:26:17.646085Z
-Sending 60 events
-Splunk HEC Response: {"text": "Success", "code": 0}
-END RequestId: 3307ee39-9722-11e8-b1e0-c140a53bb843
+START RequestId: 81a9ee27-9979-11e8-8a12-d74937aaaaaa Version: $LATEST
+Searching for logs between 2018-08-06T12:26:18.119359Z and 2018-08-06T12:56:18.119359Z
+Sending request to Cloudflare API at https://api.cloudflare.com/client/v4/zones/aaaabbbbccccddddeeeeffffgggghhhh/logs/received?start=2018-08-06T12:26:18.119359Z&end=2018-08-06T12:56:18.119359Z&fields=
+Sending 42 events
+Sending request to Splunk HEC at https://hec-splunk-host.splunkcloud.com/services/collector
+Splunk HEC Response: {"text":"Success","code":0}
+END RequestId: 81a9ee27-9979-11e8-8a12-d74937aaaaaa
 ```
 
 ## Authors

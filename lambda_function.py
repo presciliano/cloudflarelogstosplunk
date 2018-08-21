@@ -30,7 +30,7 @@ def lambda_handler(event, context):
                           'X-Auth-Key': CLOUDFLARE_AUTH_KEY,
                           'Content-Type': 'application/json'}
     
-    cloudflare_url = 'https://api.cloudflare.com/client/v4/zones/' + CLOUDFLARE_ZONE_ID + '/logs/received?start=' + str(start_date) + '&end=' + str(end_date) + '&fields=' + CLOUDFLARE_FIELDS
+    cloudflare_url = 'https://api.cloudflare.com/client/v4/zones/{}/logs/received?start={}&end={}&fields={}'.format(CLOUDFLARE_ZONE_ID, str(start_date), str(end_date), CLOUDFLARE_FIELDS)
     cloudflare_request = requests.get(cloudflare_url, headers=cloudflare_headers)
     
     print('Sending request to Cloudflare API at {}'.format(cloudflare_url))
@@ -43,7 +43,7 @@ def lambda_handler(event, context):
         
         #Format Splunk HEC Request
         splunk_headers = {'Authorization': 'Splunk ' + SPLUNK_TOKEN}
-        splunk_url = 'https://' + SPLUNK_HOST + '/services/collector'
+        splunk_url = 'https://{}/services/collector'.format(SPLUNK_HOST)
         
         print('Sending request to Splunk HEC at {}'.format(splunk_url))
         
@@ -51,7 +51,7 @@ def lambda_handler(event, context):
         for line in cloudflare_response:
             
             jline = json.loads(line)
-            splunk_data = '{"sourcetype": "cflogshare", "time":' + str(jline['EdgeStartTimestamp']) + ', "event":' + str(line) + '}\n'
+            splunk_data = '{"sourcetype": "cflogshare", "time":{}, "event":{}}\n'.format(str(jline['EdgeStartTimestamp']),str(line))
             splunk_batch += splunk_data
             
         splunk_request = requests.post(splunk_url, headers=splunk_headers, data=splunk_batch)

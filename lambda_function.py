@@ -51,7 +51,7 @@ def lambda_handler(event, context):
         for line in cloudflare_response:
             
             jline = json.loads(line)
-            splunk_data = '{"sourcetype": "cflogshare", "time":{}, "event":{}}\n'.format(str(jline['EdgeStartTimestamp']),str(line))
+            splunk_data = '{{"sourcetype": "cflogshare", "time":{}, "event":{}}}\n'.format(str(jline['EdgeStartTimestamp']),str(line))
             splunk_batch += splunk_data
             
         splunk_request = requests.post(splunk_url, headers=splunk_headers, data=splunk_batch)
